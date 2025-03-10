@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="instructions-box">
+    <h1 class="animate-title">Instructions for Tumor Detection Results</h1>
+    <div class="instructions-content">
+        <div class="instruction-step">
+            <h2>Step 1: Understanding Tumor Detection</h2>
+            <p>If a tumor is detected, the processed image will show a heatmap highlighting the tumor area with a color gradient (red indicating higher intensity), as shown below:</p>
+            <img src="{{ url_for('static', filename='instructions/step1.png') }}" alt="Tumor Detected" class="instruction-img">
+        </div>
+        <div class="instruction-step">
+            <h2>Step 2: No Tumor Detected</h2>
+            <p>If no tumor is detected, the processed image will not have a heatmap, indicating a healthy MRI scan:</p>
+            <img src="{{ url_for('static', filename='instructions/step2.jpg') }}" alt="No Tumor" class="instruction-img">
+        </div>
+        <div class="instruction-step">
+            <h2>Step 3: Next Steps</h2>
+            <p>Consult a medical professional for further analysis. The diagram below explains tumor severity and recommended actions:</p>
+            <img src="{{ url_for('static', filename='instructions/step3.jpg') }}" alt="Next Steps" class="instruction-img">
+        </div>
+    </div>
+    <a href="{{ url_for('upload') }}" class="btn">Back to Upload</a>
+    <a href="{{ url_for('hospitals') }}" class="btn" id="view-hospitals-btn">View Hospitals</a>
+</div>
+{% endblock %}

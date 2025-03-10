@@ -11,6 +11,7 @@ Input: MRI scans (preprocessed for clarity).
 CNN Magic: Layers of convolution and pooling detect tumor patterns.
 Output: Tumor presence (yes/no) or highlighted tumor regions.
 Accuracy: 96%
+
 Tech Details
 
 Language: Python

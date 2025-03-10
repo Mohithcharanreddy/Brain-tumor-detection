@@ -15,8 +15,11 @@ Accuracy: 96%
 Tech Details
 
 Language: Python
+
 Framework: TensorFlow, Keras, PyTorch
+
 Libraries: NumPy, OpenCV for preprocessing
+
 Dataset: Kaggle Brain MRI
 
 Why CNNs?

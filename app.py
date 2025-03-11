@@ -26,6 +26,19 @@ Session(app)
 MODEL_URL = "https://drive.google.com/uc?export=download&id=1-QaHl1xmWJu_ELAw-75Q8H1gvtFcW_7I"
 MODEL_PATH = 'tumor_detection_model.h5'
 IMG_SIZE = (128, 128)
+if not os.path.exists(MODEL_PATH):
+    print("Model file not found locally. Attempting to download...")
+    try:
+        response = requests.get(MODEL_URL, stream=True, timeout=10)
+        response.raise_for_status()  # Raise an exception for bad status codes
+        with open(MODEL_PATH, 'wb') as f:
+            for chunk in response.iter_content(chunk_size=8192):
+                f.write(chunk)
+        print("Model downloaded successfully to", MODEL_PATH)
+    except requests.exceptions.RequestException as e:
+        print(f"Failed to download model: {e}")
+else:
+    print("Model file already exists at", MODEL_PATH)
 
 # Load the trained models
 try:

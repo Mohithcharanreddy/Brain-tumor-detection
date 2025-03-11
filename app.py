@@ -23,7 +23,8 @@ app.config['UPLOAD_FOLDER'] = 'static/uploads/'
 app.config['HOSPITAL_IMAGE_FOLDER'] = 'static/hospitals/'
 Session(app)
 
-MODEL_PATH = 'models/tumor_detection_model.h5'
+MODEL_URL = "https://drive.google.com/uc?export=download&id=1-QaHl1xmWJu_ELAw-75Q8H1gvtFcW_7I"
+MODEL_PATH = 'tumor_detection_model.h5'
 IMG_SIZE = (128, 128)
 
 # Load the trained models

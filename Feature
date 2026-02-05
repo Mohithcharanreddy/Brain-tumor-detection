@@ -1,0 +1,6 @@
+Feature: Search Product
+
+  Scenario: Search MacBook
+    Given user opens app
+    When user searches "MacBook"
+    Then results should contain "MacBook"

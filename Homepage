@@ -1,0 +1,13 @@
+package pages;
+
+import org.openqa.selenium.By;
+
+public class HomePage extends BasePage {
+    By searchBox = By.name("search");
+    By searchBtn = By.cssSelector("button.btn.btn-default.btn-lg");
+
+    public void search(String text) {
+        driver.findElement(searchBox).sendKeys(text);
+        driver.findElement(searchBtn).click();
+    }
+}

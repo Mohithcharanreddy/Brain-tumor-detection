@@ -1,0 +1,28 @@
+package steps;
+
+import io.cucumber.java.en.*;
+import org.testng.Assert;
+import pages.BasePage;
+import pages.HomePage;
+
+public class SearchSteps {
+
+    HomePage home = new HomePage();
+
+    @Given("user opens app")
+    public void user_opens_app() {
+        BasePage.initDriver();
+        BasePage.openApp();
+    }
+
+    @When("user searches {string}")
+    public void user_searches(String item) {
+        home.search(item);
+    }
+
+    @Then("results should contain {string}")
+    public void verify_results(String item) {
+        Assert.assertTrue(BasePage.driver.getPageSource().contains(item));
+        BasePage.quit();
+    }
+}

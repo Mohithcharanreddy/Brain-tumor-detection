@@ -16,3 +16,4 @@ public class HomePage extends BasePage {
         wait.until(ExpectedConditions.elementToBeClickable(searchBtn)).click();
     }
 }
+
